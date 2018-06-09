@@ -1,0 +1,26 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "title": "rodo",
+      "author": "tramontina",
+      "description": "limpa o chao",
+      "category_id": 1,
+      "quantity": 2
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "limpeza"
+    }
+  ],
+  "stock": [
+    {
+      "id": 1,
+      "product_id": 1,
+      "quantity": 2,
+      "date_time": "2012-04-23T18:25:43.511Z"
+    }
+  ]
+}

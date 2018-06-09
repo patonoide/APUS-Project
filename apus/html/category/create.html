@@ -11,23 +11,37 @@
 
     <title>Basic CRUD</title>
 </head>
-<div class="row">
-
-    <div class="col-xs-3 col-xs-offset-4 top">
-
-
-
-        <label  title="Identifier">ID</label>
-        <input  type="text" class="form-control input-4" value=""  name="outros" title="">
+<body ng-app="myApp">
+    <div ng-controller="categoryController">
+    <div class="row">
 
 
-        <label  title="Name">Name</label>
-        <input  type="text" class="form-control input-4" value=""  name="outros" title="">
+        <div class="col-xs-3 col-xs-offset-4 top">
 
-        <br>
-        <button type="button"class="btn btn-info" name="button">Send</button>
+            <form class="" action="" method="post">
 
 
+
+
+                <input  type="hidden" class="form-control input-4" value=""  name="outros" ng-model="category.id" >
+
+
+                <label  title="Name">Name</label>
+                <input  type="text" class="form-control input-4" value=""  name="outros" ng-model="category.name" required>
+
+                <br>
+                <button type="button"class="btn btn-info" name="button"  ng-click="newCategory()">Save</button>
+
+
+
+            </form>
+
+        </div>
     </div>
 </div>
+</body>
+<script type="text/javascript" src=../../angular/angular.min.js></script>
+<script type="text/javascript" src="../../jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src=../../app/category_controller.js></script>
 </html>
