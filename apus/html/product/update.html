@@ -6,41 +6,50 @@
     <link rel="stylesheet" href="../../css/styles.css">
 
 
-    <script type="text/javascript" src="../../jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
 
     <title>Basic CRUD</title>
 </head>
-<div class="row">
+<body ng-app="myApp">
+    <div class="row" ng-controller="productController">
 
-    <div class="col-xs-3 col-xs-offset-4 top">
-
-
-
-        <label  title="Identifier">ID</label>
-        <input  type="number" class="form-control input-4" value=""  name="outros" title="">
-
-        <label  title="Catergory Identifier">Category_ID</label>
-        <input  type="number" class="form-control input-4" value=""  name="outros" title="">
+        <div class="col-xs-3 col-xs-offset-4 top" ng-init="category()">
 
 
-        <label  title="Title">Title</label>
-        <input  type="text" class="form-control input-4" value=""  name="outros" title="">
 
-        <label  title="Description">Description</label>
-        <input  type="text" class="form-control input-4" value=""  name="outros" title="">
+            <input  type="hidden" class="form-control input-4" value=""  name="outros" ng-model="product.id" >
+            <label  title="Catergory Identifier">Category_ID</label>
+            <select ng-model="product.category_id" required>
 
-        <label  title="Price">Price</label>
-        <input  type="number" class="form-control input-4" value=""  name="outros" title="">
+                 <option disabled value="" selected hidden>Select one</option>
 
-        <label  title="Qunatity">Quantity</label>
-        <input  type="text" class="form-control input-4" value=""  name="outros" title="">
+                <option selected ng-repeat="category in categories" value="{{category.id}}">{{category.name}}</option>
+
+            </select>
+            <br>
+            <label  title="Title">Title</label>
+            <input  type="text" class="form-control input-4" value="" ng-model="product.title" name="outros" title="">
+
+            <label  title="Description">Description</label>
+            <input  type="text" class="form-control input-4" value="" ng-model="product.description" name="outros" title="">
+
+            <label  title="Price">Price</label>
+            <input  type="number" class="form-control input-4" value="" ng-model="product.price" name="outros" title="">
+
+            <label  title="Quantity">Quantity</label>
+            <input  type="number" class="form-control input-4" value="" ng-model="product.quantity" name="outros" title="">
 
 
-        <br>
-        <button type="button"class="btn btn-info" name="button">Update</button>
+            <br>
+            <button type="button"class="btn btn-info" ng-click="updateProduct()"name="button">Send</button>
 
 
+        </div>
     </div>
-</div>
+
+
+</body>
+<script type="text/javascript" src=../../angular/angular.min.js></script>
+<script type="text/javascript" src="../../jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src=../../app/product_controller.js></script>
 </html>

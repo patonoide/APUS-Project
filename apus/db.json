@@ -1,22 +1,102 @@
 {
   "product": [
     {
-      "id": 1,
-      "title": "rodo",
-      "author": "tramontina",
-      "description": "limpa o chao",
-      "category_id": 1,
-      "quantity": 2
+      "title": "1",
+      "category_id": "6",
+      "quantity": 1,
+      "price": 1,
+      "description": "1",
+      "id": 2
+    },
+    {
+      "id": 4,
+      "title": "1",
+      "category_id": "7",
+      "quantity": "1",
+      "price": 1,
+      "description": "1"
+    },
+    {
+      "id": 5,
+      "title": "1",
+      "category_id": "5",
+      "quantity": "1",
+      "price": 1,
+      "description": "1"
+    },
+    {
+      "title": "1",
+      "category_id": "8",
+      "quantity": 1,
+      "price": 1,
+      "description": "1",
+      "id": 6
+    },
+    {
+      "id": 7,
+      "title": "dsa",
+      "quantity": "1",
+      "price": 1,
+      "description": "1"
+    },
+    {
+      "id": 8,
+      "title": "1",
+      "quantity": "1",
+      "price": 1,
+      "description": "1"
+    },
+    {
+      "id": 9,
+      "title": "1",
+      "quantity": "1",
+      "price": 1,
+      "description": "1"
+    },
+    {
+      "id": 10,
+      "title": "1",
+      "quantity": "1",
+      "price": 1,
+      "description": "1"
     }
   ],
   "category": [
     {
-      "name": "ssdas",
-      "id": 3
+      "name": "dsasda",
+      "id": 5
     },
     {
-      "name": "fasdweqfasda",
-      "id": 6
+      "id": 6,
+      "name": "qweqa"
+    },
+    {
+      "id": 7,
+      "name": "dsada"
+    },
+    {
+      "id": 8,
+      "name": "ewqewq"
+    },
+    {
+      "id": 9,
+      "name": "dsadsa"
+    },
+    {
+      "id": 10,
+      "name": "ewqeqa"
+    },
+    {
+      "id": 11,
+      "name": "dsadafa"
+    },
+    {
+      "id": 12,
+      "name": "eqrq"
+    },
+    {
+      "id": 13,
+      "name": "ewqdasd"
     }
   ],
   "stock": [

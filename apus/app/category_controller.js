@@ -15,18 +15,28 @@ function categoryController($scope,$http,$window,$location) {
         .then(function(result) {
             $scope.categories = result.data;
         });
+        return $scope.categories
     }
 
 
     $scope.newCategory = function(){
-        $http.get('http://localhost:3000/category' )
-        .then(function(result) {
-            $scope.categories = result.data;
-        });
-        var size = $scope.categories.length
+        var id =0
+
+            for (category of $scope.categories) {
+                if(id==category.id){
+                    id++
+                }
+
+            }
 
 
-        $http.post('http://localhost:3000/category',{id: size+1 ,name:$scope.category.name}).then(function(msg){
+
+
+
+
+
+
+        $http.post('http://localhost:3000/category',{id: id ,name:$scope.category.name}).then(function(msg){
             if(msg.loginSucceeded==="true"){
                 console.log("worked")
             }else{
@@ -54,7 +64,10 @@ function categoryController($scope,$http,$window,$location) {
             }
         })
         $window.location.href='listing.html'
+        function update(){
 
+
+        }
 
     }
 

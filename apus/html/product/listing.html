@@ -6,15 +6,18 @@
     <link rel="stylesheet" href="../../css/styles.css">
 
 
-    <script type="text/javascript" src="../../jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
 
     <title>Basic CRUD</title>
 </head>
-<body>
+<body ng-app="myApp">
 
-    <div class="row">
-        <div class="col-xs-1 col-xs-offset-2 top-button">
+    <div class="row"ng-controller="productController" ng-init="listing()" ng-init="listingC()">
+        <div class="col-xs-1 col-xs-offset-1 top-button">
+            <a href="../index.html">  <button type="button" class="btn btn-info"name="button">Index</button>   </a>
+        </div>
+
+
+        <div class="col-xs-1  top-button">
             <a href="create.html"> <button type="button" class="btn btn-success"name="button">New Product</button></a>
         </div>
         <div class="col-xs-6 ">
@@ -24,7 +27,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Category_ID</th>
+                        <th>Category</th>
                         <th>Title</th>
                         <th>Description</th>
                         <th>Price</th>
@@ -32,16 +35,18 @@
                         <th>Options</th>
                     </tr>
                 </thead>
-                <tbody >
-                    <tr>
-                        <td>123</td>
-                        <td>Teste</td>
-                        <td>Teste</td>
-                        <td>Teste</td>
-                        <td>Teste</td>
-                        <td>Teste</td>
+                <tbody ng-init="category()">
+                    <tr ng-repeat="product in products" >
+                        <td>{{product.id}}</td>
+                        <td>{{product.category_id}}  {{eachCategory(product.category_id) }}</td>
+                        <td>{{product.title}}</td>
+                        <td>{{product.description}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.quantity}}</td>
 
-                        <td>   <a href="update.html">  <button type="button" class="btn btn-info"name="button">Update    </button>   </a> <a href="delete.html">  <button type="button" class="btn btn-danger "name="button">Delete    </button>   </a>     </td>
+
+                        <td><a href="update.html?id={{product.id}}">  <button type="button" class="btn btn-info"name="button">Update    </button>   </a>
+                            <button type="button" class="btn btn-danger "  ng-click="deleteProduct(product.id)" name="button">Delete    </button>   </td>
                     </tr>
                 </tbody>
             </table>
@@ -49,4 +54,8 @@
     </div>
 
 </body>
+<script type="text/javascript" src=../../angular/angular.min.js></script>
+<script type="text/javascript" src="../../jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src=../../app/product_controller.js></script>
 </html>
