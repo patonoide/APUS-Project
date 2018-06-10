@@ -6,19 +6,18 @@
     <link rel="stylesheet" href="../../css/styles.css">
 
 
-    <script type="text/javascript" src="../../jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
 
     <title>Basic CRUD</title>
 </head>
 
-<body>
+<body ng-app="myApp">
 
 
-
-    <div class="row">
-
-        <div class="col-xs-1 col-xs-offset-3 top-button">
+    <div class="row" ng-controller="stockController" ng-init="listing()" >
+        <div class="col-xs-1 col-xs-offset-1 top-button">
+            <a href="../index.html">  <button type="button" class="btn btn-info"name="button">Index</button>   </a>
+        </div>
+        <div class="col-xs-1 col-xs-offset-1 top-button">
             <a href="create.html"> <button type="button" class="btn btn-success"name="button">New Stock</button></a>
         </div>
         <div class="col-xs-5 ">
@@ -34,17 +33,22 @@
                         <th>Options</th>
                     </tr>
                 </thead>
-                <tbody >
-                    <tr>
-                        <td>123</td>
-                        <td>Teste</td>
-                        <td>Teste</td>
-                        <td>Teste</td>
-                        <td>   <a href="update.html">  <button type="button" class="btn btn-info"name="button">Update    </button>   </a> <a href="delete.html">  <button type="button" class="btn btn-danger"name="button">Delete    </button>   </a>     </td>
+                <tbody ng-init="product()">
+                    <tr ng-repeat="stock in stocks">
+                        <td>{{stock.id}}</td>
+                        <td>{{stock.id}} {{eachProduct(stock.id)}}</td>
+                        <td>{{stock.quantity}}</td>
+                        <td>{{stock.date_time}}</td>
+                        <td>   <a href="update.html?id={{stock.id}}">  <button type="button" class="btn btn-info"name="button">Update    </button>   </a>
+                             <button type="button"  ng-click="deleteStock(stock.id)" class="btn btn-danger"name="button">Delete    </button>     </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </body>
+<script type="text/javascript" src=../../angular/angular.min.js></script>
+<script type="text/javascript" src="../../jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src=../../app/stock_controller.js></script>
 </html>

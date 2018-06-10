@@ -6,35 +6,45 @@
     <link rel="stylesheet" href="../../css/styles.css">
 
 
-    <script type="text/javascript" src="../../jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
 
     <title>Basic CRUD</title>
 </head>
-<div class="row">
-
-    <div class="col-xs-3 col-xs-offset-4 top">
+<body ng-app="myApp">
 
 
+    <div class="row" ng-controller="stockController">
 
-        <label  title="Identifier">ID</label>
-        <input  type="number" class="form-control input-4" value=""  name="outros" title="">
-
-        <label  title="Product Identifier">Product_ID</label>
-        <input  type="number" class="form-control input-4" value=""  name="outros" title="">
-
-        <label  title="Qunatity">Quantity</label>
-        <input  type="text" class="form-control input-4" value=""  name="outros" title="">
-
-        <label  title="Description">Date_Time</label>
-        <input  type="text" class="form-control input-4" value=""  name="outros" title="">
+        <div class="col-xs-3 col-xs-offset-4 top "  ng-init="product()">
 
 
 
-        <br>
-        <button type="button"class="btn btn-info" name="button">Update</button>
+
+            <label  title="Product Identifier">Product_ID</label>
+            <select ng-model="stock.product_id" required>
+
+                 <option disabled value="" selected hidden>Select one</option>
+
+                <option selected ng-repeat="product in products" value="{{product.id}}">{{product.title}}</option>
+
+            </select>
+            <br>
+            <label  title="Qunatity">Quantity</label>
+            <input  type="text" class="form-control input-4" value="" ng-model="stock.quantity" name="outros" title="">
+
+            <label  title="Description">Date_Time</label>
+            <input  type="text" class="form-control input-4" value="" ng-model="stock.date_time" name="outros" title="">
 
 
+
+            <br>
+            <button type="button"class="btn btn-info" ng-click="updateStock()" name="button">Send</button>
+
+
+        </div>
     </div>
-</div>
+</body>
+<script type="text/javascript" src=../../angular/angular.min.js></script>
+<script type="text/javascript" src="../../jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src=../../app/stock_controller.js></script>
 </html>

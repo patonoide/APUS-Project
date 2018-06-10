@@ -2,7 +2,7 @@
   "product": [
     {
       "title": "1",
-      "category_id": "6",
+      "category_id": "9",
       "quantity": 1,
       "price": 1,
       "description": "1",
@@ -31,34 +31,6 @@
       "price": 1,
       "description": "1",
       "id": 6
-    },
-    {
-      "id": 7,
-      "title": "dsa",
-      "quantity": "1",
-      "price": 1,
-      "description": "1"
-    },
-    {
-      "id": 8,
-      "title": "1",
-      "quantity": "1",
-      "price": 1,
-      "description": "1"
-    },
-    {
-      "id": 9,
-      "title": "1",
-      "quantity": "1",
-      "price": 1,
-      "description": "1"
-    },
-    {
-      "id": 10,
-      "title": "1",
-      "quantity": "1",
-      "price": 1,
-      "description": "1"
     }
   ],
   "category": [
@@ -105,6 +77,12 @@
       "product_id": 1,
       "quantity": 2,
       "date_time": "2012-04-23T18:25:43.511Z"
+    },
+    {
+      "product_id": "2",
+      "quantity": "333333333333",
+      "date_time": "33333333",
+      "id": 2
     }
   ]
 }
