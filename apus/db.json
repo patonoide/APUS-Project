@@ -1,88 +1,34 @@
 {
   "product": [
     {
-      "title": "1",
-      "category_id": "9",
-      "quantity": 1,
-      "price": 1,
-      "description": "1",
-      "id": 2
-    },
-    {
-      "id": 4,
-      "title": "1",
-      "category_id": "7",
-      "quantity": "1",
-      "price": 1,
-      "description": "1"
-    },
-    {
-      "id": 5,
-      "title": "1",
-      "category_id": "5",
-      "quantity": "1",
-      "price": 1,
-      "description": "1"
-    },
-    {
-      "title": "1",
-      "category_id": "8",
-      "quantity": 1,
-      "price": 1,
-      "description": "1",
-      "id": 6
+      "title": "dadadsa",
+      "category_id": "1",
+      "quantity": 24542,
+      "price": 212,
+      "description": "fadsafads",
+      "id": 8
     }
   ],
   "category": [
     {
-      "name": "dsasda",
-      "id": 5
-    },
-    {
-      "id": 6,
-      "name": "qweqa"
-    },
-    {
-      "id": 7,
-      "name": "dsada"
-    },
-    {
-      "id": 8,
-      "name": "ewqewq"
-    },
-    {
-      "id": 9,
-      "name": "dsadsa"
-    },
-    {
-      "id": 10,
-      "name": "ewqeqa"
-    },
-    {
-      "id": 11,
-      "name": "dsadafa"
-    },
-    {
-      "id": 12,
-      "name": "eqrq"
-    },
-    {
-      "id": 13,
-      "name": "ewqdasd"
+      "name": "1234",
+      "id": 1
     }
   ],
   "stock": [
     {
-      "id": 1,
-      "product_id": 1,
-      "quantity": 2,
-      "date_time": "2012-04-23T18:25:43.511Z"
+      "product_id": "2",
+      "quantity": "sdasda",
+      "date": "2018/05/17 23:51",
+      "id": 1
     },
     {
-      "product_id": "2",
-      "quantity": "333333333333",
-      "date_time": "33333333",
+      "date": "2018/06/14 10:37",
       "id": 2
+    },
+    {
+      "date": "2018/06/13 10:35",
+      "id": 3
     }
   ]
 }

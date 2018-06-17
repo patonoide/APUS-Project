@@ -1,17 +1,15 @@
-
-
-angular.module("myApp",[])
-.controller("categoryController",['$scope','$http','$window','$location',categoryController])
+angular.module("myApp", [])
+.controller("categoryController", ['$scope', '$http', '$window', '$location', categoryController])
 
 
 
 
-function categoryController($scope,$http,$window,$location) {
-    $scope.category
-    $scope.categories=[]
+function categoryController($scope, $http, $window, $location) {
+    $scope.category={}
+    $scope.categories = []
 
-    $scope.listing =  function(){
-        $http.get('http://localhost:3000/category' )
+    $scope.listing = function() {
+        $http.get('http://localhost:3000/category')
         .then(function(result) {
             $scope.categories = result.data;
         });
@@ -19,27 +17,24 @@ function categoryController($scope,$http,$window,$location) {
     }
 
 
-    $scope.newCategory = function(){
-        var id =0
+    $scope.newCategory = function() {
+        var id = 0
 
-            for (category of $scope.categories) {
-                if(id==category.id){
-                    id++
-                }
-
+        for (category of $scope.categories) {
+            if (id == category.id) {
+                id++
             }
 
+        }
 
 
-
-
-
-
-
-        $http.post('http://localhost:3000/category',{id: id ,name:$scope.category.name}).then(function(msg){
-            if(msg.loginSucceeded==="true"){
+        $http.post('http://localhost:3000/category', {
+            id: id,
+            name: $scope.category.name
+        }).then(function(msg) {
+            if (msg.loginSucceeded === "true") {
                 console.log("worked")
-            }else{
+            } else {
                 console.log("try again");
             }
         });
@@ -47,27 +42,39 @@ function categoryController($scope,$http,$window,$location) {
         $window.location.href = 'listing.html';
     };
 
-    $scope.deleteCategory = function(id) {
-        $http.delete('http://localhost:3000/category/'+id )
-        $window.location.href='listing.html'
+
+    
+    $scope.oneCategory= function(){
+
+        var id = $window.location.search.replace("?id=" , "")
+        $http.get('http://localhost:3000/category/'+id )
+        .then(function(result) {
+            $scope.category = result.data;
+        });
+
+
     }
 
-    $scope.updateCategory = function(){
+    $scope.deleteCategory = function(id) {
+        $http.delete('http://localhost:3000/category/' + id)
+        $window.location.href = 'listing.html'
+    }
 
-        var id = $window.location.search.replace("?id=","")
+    $scope.updateCategory = function() {
 
-        $http.put('http://localhost:3000/category/'+id,{name:$scope.category.name}).then(function(msg){
-            if(msg.loginSucceeded==="true"){
+        var id = $window.location.search.replace("?id=", "")
+
+        $http.put('http://localhost:3000/category/' + id, {
+            name: $scope.category.name
+        }).then(function(msg) {
+            if (msg.loginSucceeded === "true") {
                 console.log("worked")
-            }else{
+            } else {
                 console.log("try again");
             }
         })
-        $window.location.href='listing.html'
-        function update(){
+        $window.location.href = 'listing.html'
 
-
-        }
 
     }
 

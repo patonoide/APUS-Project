@@ -10,7 +10,7 @@
     <title>Basic CRUD</title>
 </head>
 <body ng-app="myApp">
-    <div class="row" ng-controller="productController">
+    <div class="row" ng-controller="productController"ng-init="oneProduct()">
 
         <div class="col-xs-3 col-xs-offset-4 top" ng-init="category()">
 
@@ -18,25 +18,25 @@
 
             <input  type="hidden" class="form-control input-4" value=""  name="outros" ng-model="product.id" >
             <label  title="Catergory Identifier">Category_ID</label>
-            <select ng-model="product.category_id" required>
+            <select class="form-control"ng-model="product.category_id" required>
 
-                 <option disabled value="" selected hidden>Select one</option>
+                 <option selected value="{{product.category_id}}" selected >{{eachCategory(product.category_id)}}</option>
 
-                <option selected ng-repeat="category in categories" value="{{category.id}}">{{category.name}}</option>
+                <option ng-repeat="category in categories" value="{{category.id}}">{{category.name}}</option>
 
             </select>
             <br>
             <label  title="Title">Title</label>
-            <input  type="text" class="form-control input-4" value="" ng-model="product.title" name="outros" title="">
+            <input  type="text" class="form-control input-4" value="{{product.title}}" ng-model="product.title" name="outros" title="">
 
             <label  title="Description">Description</label>
-            <input  type="text" class="form-control input-4" value="" ng-model="product.description" name="outros" title="">
+            <input  type="text" class="form-control input-4" value="{{product.description}}" ng-model="product.description" name="outros" title="">
 
             <label  title="Price">Price</label>
-            <input  type="number" class="form-control input-4" value="" ng-model="product.price" name="outros" title="">
+            <input  type="number" class="form-control input-4" value="{{product.price}}" ng-model="product.price" name="outros" title="">
 
             <label  title="Quantity">Quantity</label>
-            <input  type="number" class="form-control input-4" value="" ng-model="product.quantity" name="outros" title="">
+            <input  type="number" class="form-control input-4" value="{{product.quantity}}" ng-model="product.quantity" name="outros" title="">
 
 
             <br>

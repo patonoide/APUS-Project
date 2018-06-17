@@ -10,13 +10,14 @@ function stockController($scope,$http,$window,$location) {
     $scope.stock={}
     $scope.products=[]
     $scope.stocks=[]
+    $scope.product={}
 
     $scope.product = function(){
         $http.get('http://localhost:3000/product')
         .then(function(result) {
             $scope.products = result.data;
         });
-        return $scope.products
+        $scope.products
     }
 
     $scope.eachProduct= function(product_id){
@@ -24,11 +25,31 @@ function stockController($scope,$http,$window,$location) {
         for (product of $scope.products) {
 
             if(product.id==product_id)
-            return product.name;
+            return product.title;
         }
 
     }
 
+    $scope.updateProduct=function(){
+
+        for (prod of $scope.products) {
+            if(prod.id==$scope.stock.product_id){
+                return prod.title
+            }
+
+        }
+
+    }
+
+    $scope.oneStock= function(){
+            var id = $window.location.search.replace("?id=" , "")
+            $http.get('http://localhost:3000/stock/'+id )
+            .then(function(result) {
+                $scope.stock = result.data;
+            });
+
+
+    }
     $scope.listing =  function(){
         $http.get('http://localhost:3000/stock' )
         .then(function(result) {
@@ -39,7 +60,7 @@ function stockController($scope,$http,$window,$location) {
     $scope.newStock = function(){
 
         var id =0
-
+        var date = document.getElementById("date").value;
             for (stock of $scope.stocks) {
                 if(id==stock.id){
                     id++
@@ -49,7 +70,7 @@ function stockController($scope,$http,$window,$location) {
 
 
 
-        $http.post('http://localhost:3000/stock',{id: id ,product_id:$scope.stock.product_id,quantity:$scope.stock.quantity,date_time:$scope.stock.date_time}).then(function(msg){
+        $http.post('http://localhost:3000/stock',{id: id ,product_id:$scope.stock.product_id,quantity:$scope.stock.quantity,date:date}).then(function(msg){
             if(msg.loginSucceeded==="true"){
                 console.log("worked")
             }else{
@@ -68,8 +89,8 @@ function stockController($scope,$http,$window,$location) {
     $scope.updateStock = function(){
 
         var id = $window.location.search.replace("?id=" , "")
-
-        $http.put('http://localhost:3000/stock/'+id,{product_id:$scope.stock.product_id,quantity:$scope.stock.quantity,date_time:$scope.stock.date_time}).then(function(msg){
+        var date = document.getElementById("date").value;
+        $http.put('http://localhost:3000/stock/'+id,{product_id:$scope.stock.product_id,quantity:$scope.stock.quantity,date:date}).then(function(msg){
             if(msg.loginSucceeded==="true"){
                 console.log("worked")
             }else{

@@ -16,7 +16,7 @@ function productController($scope,$http,$window,$location) {
         .then(function(result) {
             $scope.categories = result.data;
         });
-        return $scope.categories
+
     }
 
     $scope.eachCategory= function(category_id){
@@ -26,6 +26,16 @@ function productController($scope,$http,$window,$location) {
             if(category.id==category_id)
             return category.name;
         }
+
+    }
+    $scope.oneProduct= function(){
+        
+            var id = $window.location.search.replace("?id=" , "")
+            $http.get('http://localhost:3000/product/'+id )
+            .then(function(result) {
+                $scope.product = result.data;
+            });
+
 
     }
 

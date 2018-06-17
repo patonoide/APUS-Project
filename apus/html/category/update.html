@@ -15,9 +15,9 @@
     <div class="row"  ng-controller="categoryController">
 
 
-        <div class="col-xs-3 col-xs-offset-4 top">
+        <div class="col-xs-3 col-xs-offset-4 top"  ng-init="oneCategory()">
 
-            <form class="" action="index.html" method="post">
+
 
 
 
@@ -26,14 +26,14 @@
 
 
                 <label  title="Name">Name</label>
-                <input  type="text" class="form-control input-4" value=""  name="outros" ng-model="category.name">
+                <input  type="text" class="form-control input-4" value="{{category.name}}"  name="outros" ng-model="category.name">
 
                 <br>
                 <button type="button"class="btn btn-info" ng-click="updateCategory()" name="button">Update</button>
 
 
 
-            </form>
+
 
         </div>
     </div>

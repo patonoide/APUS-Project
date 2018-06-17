@@ -36,9 +36,9 @@
                 <tbody ng-init="product()">
                     <tr ng-repeat="stock in stocks">
                         <td>{{stock.id}}</td>
-                        <td>{{stock.id}} {{eachProduct(stock.id)}}</td>
+                        <td>{{stock.product_id}} {{eachProduct(stock.product_id)}}</td>
                         <td>{{stock.quantity}}</td>
-                        <td>{{stock.date_time}}</td>
+                        <td>{{stock.date}}</td>
                         <td>   <a href="update.html?id={{stock.id}}">  <button type="button" class="btn btn-info"name="button">Update    </button>   </a>
                              <button type="button"  ng-click="deleteStock(stock.id)" class="btn btn-danger"name="button">Delete    </button>     </td>
                     </tr>

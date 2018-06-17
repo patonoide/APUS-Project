@@ -1,50 +1,95 @@
 <html lang="en" dir="ltr">
+
 <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
 
-    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../../css/jquery.datetimepicker.min.css">
 
 
-
-    <title>Basic CRUD</title>
+  <title>Basic CRUD</title>
 </head>
+
 <body ng-app="myApp">
 
 
-    <div class="row" ng-controller="stockController">
+  <div class="row" ng-controller="stockController" ng-init="oneStock()">
 
-        <div class="col-xs-3 col-xs-offset-4 top "  ng-init="product()">
-
-
+    <div class="col-xs-3 col-xs-offset-4 top " ng-init="product()">
 
 
-            <label  title="Product Identifier">Product_ID</label>
-            <select ng-model="stock.product_id" required>
 
-                 <option disabled value="" selected hidden>Select one</option>
+      <label title="Product Identifier">Product_ID</label>
+      <select class="form-control" ng-model="stock.product_id" ng-init=""required>
 
-                <option selected ng-repeat="product in products" value="{{product.id}}">{{product.title}}</option>
+                <option disabled value="{{stock.product_id}}" selected >{{eachProduct(stock.product_id)}}</option>
+
+                <option selected ng-repeat="product in products" value="{{product.id}}">  {{product.title}}  </option>
 
             </select>
-            <br>
-            <label  title="Qunatity">Quantity</label>
-            <input  type="text" class="form-control input-4" value="" ng-model="stock.quantity" name="outros" title="">
+      <br>
+      <label title="Quantity">Quantity</label>
+      <input type="text" class="form-control input-4" value="{{stock.quantity}}" ng-model="stock.quantity" name="outros" title="">
 
-            <label  title="Description">Date_Time</label>
-            <input  type="text" class="form-control input-4" value="" ng-model="stock.date_time" name="outros" title="">
-
-
-
-            <br>
-            <button type="button"class="btn btn-info" ng-click="updateStock()" name="button">Send</button>
+      <br>
+      <label title="">Date_Time</label>
+      <input type="text" name="filter-date" value="{{stock.date}}"class="form-control" id="filter-date" value="dasd" />
 
 
-        </div>
+      <input type="text"  id="date"value=""style="display:none">
+      <br>
+
+
+
+
+      <button type="button" class="btn btn-info"id="button"ng-keyup="$event.keyCode == 13 ? updateStock() : null" ng-click="updateStock()" name="button">Send</button>
+
+
     </div>
+  </div>
 </body>
+
+
 <script type="text/javascript" src=../../angular/angular.min.js></script>
 <script type="text/javascript" src="../../jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/moment.js"></script>
+
 <script type="text/javascript" src=../../app/stock_controller.js></script>
+<script type="text/javascript" src="../../js/jquery.datetimepicker.full.min.js"></script>
+
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+    'use strict';
+    jQuery('#filter-date').datetimepicker({
+
+    });
+
+  });
+</script>
+
+<script type="text/javascript">
+
+function data(){
+document.getElementById('date').value=$('#filter-date').val();
+}
+document.getElementById('button').addEventListener("mouseover",data);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </html>
