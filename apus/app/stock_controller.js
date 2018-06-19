@@ -11,7 +11,7 @@ function stockController($scope,$http,$window,$location) {
     $scope.products=[]
     $scope.stocks=[]
     $scope.product={}
-
+    //Product listing, used for creating and updating a stock
     $scope.product = function(){
         $http.get('http://localhost:3000/product')
         .then(function(result) {
@@ -19,7 +19,7 @@ function stockController($scope,$http,$window,$location) {
         });
         $scope.products
     }
-
+    //Returns title of specific product using it's specific ID
     $scope.eachProduct= function(product_id){
 
         for (product of $scope.products) {
@@ -29,7 +29,7 @@ function stockController($scope,$http,$window,$location) {
         }
 
     }
-
+    //used in the update stock page, used to return title of the product in stock
     $scope.updateProduct=function(){
 
         for (prod of $scope.products) {
@@ -40,7 +40,7 @@ function stockController($scope,$http,$window,$location) {
         }
 
     }
-
+    //returns the stock that is being updated
     $scope.oneStock= function(){
             var id = $window.location.search.replace("?id=" , "")
             $http.get('http://localhost:3000/stock/'+id )
@@ -50,13 +50,14 @@ function stockController($scope,$http,$window,$location) {
 
 
     }
+    //lists all the stocks
     $scope.listing =  function(){
         $http.get('http://localhost:3000/stock' )
         .then(function(result) {
             $scope.stocks = result.data;
         });
     }
-
+    //creates a new entry in the stock database
     $scope.newStock = function(){
 
         var id =0
@@ -81,11 +82,13 @@ function stockController($scope,$http,$window,$location) {
         $window.location.href = 'listing.html';
     };
 
+    //deletes the stock with the provided ID
     $scope.deleteStock = function(id) {
         $http.delete('http://localhost:3000/stock/'+id )
         $window.location.href='listing.html'
     }
-
+    //updates the specific stock with the new information
+    //had a really hard time getting the value from the datetimepicker
     $scope.updateStock = function(){
 
         var id = $window.location.search.replace("?id=" , "")

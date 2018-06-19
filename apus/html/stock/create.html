@@ -31,7 +31,7 @@
             </select>
       <br>
       <label title="Quantity">Quantity</label>
-      <input type="text" class="form-control input-4" value="" ng-model="stock.quantity" name="outros" title="">
+      <input type="number" class="form-control input-4 number" value="" ng-model="stock.quantity" name="outros" title="">
 
       <br>
       <label title="">Date_Time</label>
@@ -79,6 +79,17 @@ document.getElementById('button').addEventListener("mouseover",dadsata);
 </script>
 
 
+
+<script type="text/javascript">
+//used for controlling the input
+$('.number').keyup(function () {
+    if (!this.value.match(/[0-9]/)) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    }
+});
+
+
+</script>
 
 
 

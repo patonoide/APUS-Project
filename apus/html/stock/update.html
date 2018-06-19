@@ -30,7 +30,7 @@
             </select>
       <br>
       <label title="Quantity">Quantity</label>
-      <input type="text" class="form-control input-4" value="{{stock.quantity}}" ng-model="stock.quantity" name="outros" title="">
+      <input type="number" class="form-control input-4 number" value="{{stock.quantity}}" ng-model="stock.quantity" name="outros" title="">
 
       <br>
       <label title="">Date_Time</label>
@@ -77,7 +77,16 @@ document.getElementById('date').value=$('#filter-date').val();
 document.getElementById('button').addEventListener("mouseover",data);
 </script>
 
+<script type="text/javascript">
 
+//used for controlling the inputs
+$('.number').keyup(function () {
+    if (!this.value.match(/[0-9]/)) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    }
+});
+
+</script>
 
 
 
