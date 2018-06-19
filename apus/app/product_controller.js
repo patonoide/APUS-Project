@@ -10,7 +10,7 @@ function productController($scope,$http,$window,$location) {
     $scope.product={}
     $scope.categories=[]
     $scope.products=[]
-
+    //category listing
     $scope.category = function(){
         $http.get('http://localhost:3000/category')
         .then(function(result) {
@@ -18,7 +18,7 @@ function productController($scope,$http,$window,$location) {
         });
 
     }
-
+    //receives a category id and returns the category name attached to it
     $scope.eachCategory= function(category_id){
 
         for (category of $scope.categories) {
@@ -28,8 +28,9 @@ function productController($scope,$http,$window,$location) {
         }
 
     }
+    //similar to the eachCategory function, but this time it receives a product_id and returns a product
     $scope.oneProduct= function(){
-        
+
             var id = $window.location.search.replace("?id=" , "")
             $http.get('http://localhost:3000/product/'+id )
             .then(function(result) {
@@ -38,14 +39,14 @@ function productController($scope,$http,$window,$location) {
 
 
     }
-
+    //product listing
     $scope.listing =  function(){
         $http.get('http://localhost:3000/product' )
         .then(function(result) {
             $scope.products = result.data;
         });
     }
-
+    //receives information for a new product and sends a post request to the database
     $scope.newProduct = function(){
 
         var id =0
@@ -69,12 +70,12 @@ function productController($scope,$http,$window,$location) {
 
         $window.location.href = 'listing.html';
     };
-
+    //deletes the product with the specific id provided
     $scope.deleteProduct = function(id) {
         $http.delete('http://localhost:3000/product/'+id )
         $window.location.href='listing.html'
     }
-
+    //updates the specific product
     $scope.updateProduct = function(){
 
         var id = $window.location.search.replace("?id=","")
