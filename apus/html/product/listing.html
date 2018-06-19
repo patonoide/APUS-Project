@@ -12,8 +12,10 @@
 <body ng-app="myApp">
 
     <div class="row"ng-controller="productController" ng-init="listing()" >
-        <div class="col-xs-1 col-xs-offset-1 top-button">
+        <div class="col-xs-2 col-xs-offset-1 top-button">
             <a href="../index.html">  <button type="button" class="btn btn-info"name="button">Index</button>   </a>
+            <br>
+            <label>Pesquisar: <input class="form-control input-4"ng-model="searchText"></label>
         </div>
 
 
@@ -36,7 +38,7 @@
                     </tr>
                 </thead>
                 <tbody ng-init="category()">
-                    <tr ng-repeat="product in products" >
+                    <tr ng-repeat="product in products | filter: searchText" >
                         <td>{{product.id}}</td>
                         <td>{{product.category_id}}  {{eachCategory(product.category_id) }}</td>
                         <td>{{product.title}}</td>
