@@ -25,16 +25,20 @@
   ],
   "stock": [
     {
-      "product_id": "2",
-      "quantity": "sdasda",
+      "product_id": "8",
+      "quantity": 45,
       "date": "2018/05/17 23:51",
       "id": 1
     },
     {
+      "product_id": "9",
+      "quantity": 54,
       "date": "2018/06/14 10:37",
       "id": 2
     },
     {
+      "product_id": "8",
+      "quantity": 456,
       "date": "2018/06/13 10:35",
       "id": 3
     }
