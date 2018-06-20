@@ -1,12 +1,12 @@
 angular.module("myApp", [])
-  .controller("categoryController", ['$scope', '$http', '$window', '$location', categoryController])
+  .controller("categoryController", ['$scope', '$http', '$window', '$location', categoryController]);
 
 
 
 
 function categoryController($scope, $http, $window, $location) {
-  $scope.category = {}
-  $scope.categories = []
+  $scope.category = {};
+  $scope.categories = [];
 
   //listing for the entries in the category database
   $scope.listing = function() {
