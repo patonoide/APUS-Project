@@ -1,16 +1,18 @@
 
 
 
-angular.module('myApp', [])
-    .service('login', function () {
-        var status;
+angular.module("myApp", []).controller("loginController",['login',loginController]);
 
-        return {
-            getProperty: function () {
-                return status;
-            },
-            setProperty: function(value) {
-                status= value;
-            }
-        };
-    });
+function loginController(login){
+    $scope.message ="";
+    $scope.logar = function(username,password){
+        if(username=="admin"&&password=="admin"){
+
+        }else{
+            $scope.message= "Something went wrong.";
+        }
+
+    };
+
+
+};

@@ -14,17 +14,17 @@ function categoryController($scope, $http, $window, $location) {
       .then(function(result) {
         $scope.categories = result.data;
       });
-    return $scope.categories
+    return $scope.categories;
   }
 
   //adds a new entry in the category database using the information provided
   //automatically creates new id
   $scope.newCategory = function() {
-    var id = 0
+    var id = 0;
 
     for (category of $scope.categories) {
       if (id == category.id) {
-        id++
+        id++;
       }
 
     }
