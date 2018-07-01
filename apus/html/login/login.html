@@ -1,9 +1,8 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
-
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 
 
 
@@ -12,26 +11,40 @@
 
 
 
-<body>
+<body ng-app="myApp">
+
+    <div ng-controller="loginController">
 
 
 
-    <div class="row ">
+        <div class="row" >
 
-        <div class="col-xs-4 col-xs-offset-2">
-            <label for="Username">Username</label>
-            <input type="text"class="form-control" name="Username" value="">
+            <div class="col-xs-4 col-xs-offset-4">
+                <br>
+                <div class="alert alert-success" >
+                    To access the service use the username and password "admin"
+                </div>
+                <br>
+                <label for="Username">Username</label>
+                <input type="text"class="form-control" name="username" ng-model="login.username"value="">
 
-            <label for="Username">Username</label>
-            <input type="text"class="form-control" name="Username" value="">
-s
+                <label for="Username">Password</label>
+                <input type="password"class="form-control" name="password" ng-model="login.password"value="">
+                <br>
+
+                <button type="button" class="btn btn-success"name="button"ng-click="loguser()">Login</button>
+
+            </div>
+
 
         </div>
-
-
     </div>
 </body>
-<script type="text/javascript" src="../jquery/jquery.min.js"></script>
-<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src=../../angular/angular.min.js></script>
+<script type="text/javascript" src="../../jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../app/login_service.js"></script>
+<script type="text/javascript" src="../../app/login_controller.js"></script>
+
 
 </html>

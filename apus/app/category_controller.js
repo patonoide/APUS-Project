@@ -8,6 +8,15 @@ function categoryController($scope, $http, $window, $location) {
   $scope.category = {};
   $scope.categories = [];
 
+  //checks for authentication
+  if(localStorage.getItem('status')!="1"){
+
+      $window.location.href="../login/login.html"
+  }
+
+  //sets the navbar option to selected
+  document.getElementById('category').className +=" active";
+
   //listing for the entries in the category database
   $scope.listing = function() {
     $http.get('http://localhost:3000/category')

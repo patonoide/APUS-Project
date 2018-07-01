@@ -10,6 +10,18 @@ function productController($scope,$http,$window,$location) {
     $scope.product={}
     $scope.categories=[]
     $scope.products=[]
+
+
+    //sets the navbar option to selected
+    document.getElementById('product').className +=" active";
+
+    //checks for authentication
+    if(localStorage.getItem('status')!="1"){
+
+        $window.location.href="../login/login.html";
+    }
+
+
     //category listing
     $scope.category = function(){
         $http.get('http://localhost:3000/category')

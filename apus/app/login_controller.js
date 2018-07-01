@@ -1,18 +1,27 @@
 
 
 
-angular.module("myApp", []).controller("loginController",['login',loginController]);
+angular.module("myApp", []).controller("loginController",["$scope","$window","$location",loginController]);
 
-function loginController(login){
-    $scope.message ="";
-    $scope.logar = function(username,password){
-        if(username=="admin"&&password=="admin"){
+function loginController($scope,$window,$location,loginService){
+    $scope.login ={};
+    $scope.loguser = function(){
+        if($scope.login.username=="admin" && $scope.login.password=="admin"){
+
+            localStorage.setItem('status',"1");
+
+
+            $window.location.href="../category/listing.html"
 
         }else{
-            $scope.message= "Something went wrong.";
+            alert("Wrong password or username");
         }
 
-    };
+    }
 
 
-};
+
+
+
+
+}

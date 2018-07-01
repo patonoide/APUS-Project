@@ -1,12 +1,9 @@
-myApp.service('login', function () {
-    var status;
 
-    return {
-        getProperty: function () {
-            return status;
-        },
-        setProperty: function(value) {
-            status= value;
-        }
-    };
-});
+
+function returnto(){
+    localStorage.setItem('status' ,"0");
+    location.reload();
+}
+
+
+document.getElementById('logoff').addEventListener("click",returnto,false);

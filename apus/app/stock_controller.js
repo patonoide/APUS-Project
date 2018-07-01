@@ -11,6 +11,18 @@ function stockController($scope,$http,$window,$location) {
     $scope.products=[]
     $scope.stocks=[]
     $scope.product={}
+
+
+    //sets the navbar option to selected
+    document.getElementById('stock').className +=" active";
+
+    //checks for authentication
+    if(localStorage.getItem('status')!=="1"){
+
+        $window.location.href="../login/login.html";
+    }
+
+
     //Product listing, used for creating and updating a stock
     $scope.product = function(){
         $http.get('http://localhost:3000/product')

@@ -10,6 +10,39 @@
     <title>Basic CRUD</title>
 </head>
 <body ng-app="myApp" >
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-inverse ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand" >APUS</span>
+            </div>
+            <div class="collapse navbar-collapse" >
+                <ul class="navbar-nav nav   ">
+                    <li id="product" class="nav-item"><a class="py-2 d-none d-md-inline-block nav-link" href="../product/listing.html">Product</a></li>
+                    <li id="stock" class="nav-item"><a class="py-2 d-none d-md-inline-block nav-link" href="../stock/listing.html">Stock</a></li>
+                    <li id="category" class="nav-item"><a class="py-2 d-none d-md-inline-block nav-link" href="../category/listing.html">Category</a></li>
+
+
+
+
+                    <li  class="nav-item ml-auto "><a id="logoff" class="py-2 d-none d-md-inline-block">Log Off</a></li>
+                </ul>
+
+
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
     <div ng-controller="categoryController">
 
 
@@ -18,9 +51,8 @@
 
             <div class="col-xs-2 col-xs-offset-1     top-button">
 
-                <a href="../index.html">  <button type="button" class="btn btn-info"name="button">Index</button>   </a>
-                <br>
-                <label>Pesquisar: <input class="form-control input-4"ng-model="searchText"></label>
+
+                <label>Search: <input class="form-control input-4"ng-model="searchText"></label>
             </div>
             <div class="col-xs-1 col-xs-offset-1 top-button">
                 <a href="create.html"> <button type="button" class="btn btn-success"name="button">New Category</button></a>
@@ -53,6 +85,7 @@
 <script type="text/javascript" src=../../angular/angular.min.js></script>
 <script type="text/javascript" src="../../jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../app/login_service.js"></script>
 <script type="text/javascript" src=../../app/category_controller.js></script>
 
 

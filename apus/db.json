@@ -1,26 +1,30 @@
 {
   "product": [
     {
-      "title": "dadadsa",
-      "category_id": "1",
-      "quantity": 321321,
-      "price": 0.32141,
-      "description": "fadsafads",
-      "id": 8
-    },
-    {
       "id": 9,
       "title": "Teste1",
       "category_id": "1",
       "quantity": 4.432,
       "price": 4.5,
       "description": "ewq"
+    },
+    {
+      "id": 10,
+      "title": "teste",
+      "category_id": "2",
+      "quantity": 12341,
+      "price": 123,
+      "description": "tes"
     }
   ],
   "category": [
     {
       "name": "1234",
       "id": 1
+    },
+    {
+      "id": 2,
+      "name": "teste"
     }
   ],
   "stock": [
