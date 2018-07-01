@@ -12,8 +12,8 @@ To run the program is pretty easy:
 ```
 json-server db.json serve
 ```
-3-Access the project index.html on your browser of choice:
+3-Access the project login page on your browser of choice:
 
-apus/html/index.html
+apus/html/login/login.html
 
 4-Enjoy this little sample of angularJS code :).
